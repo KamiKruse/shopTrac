@@ -6,6 +6,7 @@ import {
   NEXT_PUBLIC_APP_NAME,
   NEXT_PUBLIC_SERVER_URL,
 } from '@/lib/constants'
+import { ThemeProvider } from 'next-themes'
 
 const inter = Inter({
   variable: '--font-inter',
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     default: `${NEXT_PUBLIC_APP_NAME}`,
   },
   description: `${NEXT_PUBLIC_APP_DESCRIPTION}`,
-  metadataBase: new URL(NEXT_PUBLIC_SERVER_URL), 
+  metadataBase: new URL(NEXT_PUBLIC_SERVER_URL),
 }
 
 export default function RootLayout({
@@ -27,8 +28,15 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang='en'>
-      <body className={`${inter.variable} antialiased`}>{children}</body>
+    <html lang='en' suppressHydrationWarning>
+      <body className={`${inter.variable} antialiased`}>
+        <ThemeProvider
+        attribute='class'
+        defaultTheme='system'
+        enableSystem
+        disableTransitionOnChange
+        >{children}</ThemeProvider>
+      </body>
     </html>
   )
 }

@@ -1,9 +1,7 @@
-import { Button } from "@/components/ui/button";
+import ProductList from '@/components/shared/products/product-list'
+import sampleData from '@/db/sample-data'
 
-
-export default async function Home(){
-  // await new Promise((resolve) => setTimeout(resolve, 20000))
-  return (
-    <Button variant={'secondary'} >Home Page</Button>
-  )
+export default function Home() {
+  
+  return <ProductList data={sampleData.products} title='New Arrivals' limit={4}/>
 }

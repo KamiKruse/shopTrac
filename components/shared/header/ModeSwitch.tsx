@@ -1,36 +1,34 @@
 'use client'
 
-import { Button } from '@/components/ui/button'
+import { MoonIcon, SunIcon, SunMoonIcon } from 'lucide-react'
 import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react'
+
+import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
+  DropdownMenuContent,
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-  DropdownMenuContent,
 } from '@/components/ui/dropdown-menu'
-import { MoonIcon, SunIcon, SunMoonIcon } from 'lucide-react'
-import { useEffect, useState } from 'react'
 
 export default function ModeSwitch() {
-  const [mounted, setMounted ] = useState(false)
-  const {theme, setTheme} = useTheme()
+  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme } = useTheme()
 
-  useEffect(()=>{
+  useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- hydration guard for next-themes
     setMounted(true)
   }, [])
 
-  if(!mounted){
+  if (!mounted) {
     return null
   }
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger
-        asChild
-        className='focus-visible:ring-0 '
-      >
+      <DropdownMenuTrigger asChild className='focus-visible:ring-0 '>
         <Button variant='ghost'>
           {theme === 'system' ? (
             <SunMoonIcon />

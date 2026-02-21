@@ -1,12 +1,14 @@
+import '../assets/styles/globals.css'
+
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import '../assets/styles/globals.css'
+import { ThemeProvider } from 'next-themes'
+
 import {
   NEXT_PUBLIC_APP_DESCRIPTION,
   NEXT_PUBLIC_APP_NAME,
   NEXT_PUBLIC_SERVER_URL,
 } from '@/lib/constants'
-import { ThemeProvider } from 'next-themes'
 
 const inter = Inter({
   variable: '--font-inter',

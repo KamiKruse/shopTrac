@@ -1,7 +1,8 @@
 'use client'
+import Image from 'next/image'
+
 import { Button } from '@/components/ui/button'
 import { NEXT_PUBLIC_APP_NAME } from '@/lib/constants'
-import Image from 'next/image'
 
 export default function NotFound() {
   return (

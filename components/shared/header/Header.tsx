@@ -1,6 +1,8 @@
-import { NEXT_PUBLIC_APP_NAME } from '@/lib/constants'
 import Image from 'next/image'
 import Link from 'next/link'
+
+import { NEXT_PUBLIC_APP_NAME } from '@/lib/constants'
+
 import Menu from './Menu'
 
 export default function Header() {
